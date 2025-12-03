@@ -1,3 +1,7 @@
+### Advent of Code - Inputs personnels ###
+inputs/
+*.txt
+
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
