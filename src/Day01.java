@@ -18,11 +18,22 @@ public static void main(String[] args) {
         String line;
         while ((line = br.readLine()) != null) {
 
-            System.out.println(line);
+            //System.out.println(line);
+            //System.out.println(line.length());
+            //System.out.println(line.charAt(0));
+            //System.out.println(line.substring(1));
+            if (line.charAt(0) == 'L') {
+                dial -= Integer.parseInt(line.substring(1));
+                System.out.println(dial);
+            } else {
+                dial += Integer.parseInt(line.substring(1));
+            }
+            if (dial%100==0){password+=1;}
         }
 
     } catch (IOException e) {
-        e.printStackTrace();
+        e.printStackTrace(System.err);
     }
+    System.out.println(password);
 }
 }
