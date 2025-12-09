@@ -54,7 +54,7 @@ public class Day02 {
         return somme;
     }
 
-    public static boolean isRepeated(long number) {
+    /*public static boolean isRepeated(long number) {
         String s = String.valueOf(number);
         if (s.length() % 2 != 0) {
             return false;
@@ -63,5 +63,26 @@ public class Day02 {
         String firstHalf = s.substring(0, mid);
         String secondHalf = s.substring(mid);
         return firstHalf.equals(secondHalf);
+    }*/
+    public static boolean isRepeated(long number) {
+        String s = String.valueOf(number);
+        int len = s.length();
+
+        // Tester tous les diviseurs possibles
+        for (int patternLen = 1; patternLen <= len / 2; patternLen++) {
+            if (len % patternLen == 0) {
+                String pattern = s.substring(0, patternLen);
+                int repetitions = len / patternLen;
+
+                // Créer la chaîne avec le pattern répété
+                String repeated = pattern.repeat(repetitions);
+
+                if (s.equals(repeated)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }
